@@ -391,4 +391,9 @@ class PloneboardComment(BaseBTreeFolder):
 
         return self.restrictedTraverse('@@delete_view')()
 
+
+    # so that the implementation of IBrowserDefault for older versions of Plone
+    def getLayout (self):
+        return "singlecomment_view"
+
 registerType(PloneboardComment, PROJECTNAME)
